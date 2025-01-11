@@ -1,4 +1,4 @@
-# uncertainty quantification
+# 💬 uncertainty quantification
 
 This repository is created for archiving the result of 2024 UROP research scholarship program. 
 
@@ -8,11 +8,11 @@ https://arxiv.org/abs/2402.03744
 
 https://github.com/alibaba/eigenscore
 
-## 1. Background
+## ✅ Background
 
 Despite the remarkable performance of large language models (LLMs) across various NLP tasks, the issue of hallucination—producing inaccurate or false answers—remains a critical concern. The main problem with hallucination is that it generates fluent and plausible but incorrect responses, which can mislead users and ultimately reduce trust and reliance on LLMs. Uncertainty Estimation is a research field that measures the degree of hallucination in LLM responses and distinguishes between accurate and false answers, playing a crucial role in building safe and trustworthy LLMs. This study proposes two approaches for uncertainty estimation using the internal states of LLMs, based on prior research (Chen et al., 2024). First, it utilizes the scaled-dot product used in self-attention calculations. Second, it employs cosine similarity, a metric for measuring the similarity between vectors. The superior performance of these two methods was validated using two off-the-shelf LLaMA models and two question-answering benchmarks.
 
-## 2. Method
+## ✅ Method
 
 This study proposes two uncertainty estimation approaches using the internal states of LLMs, inspired by the findings from INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection (Chen et al., 2024). Since the hidden states of LLMs are represented as d-dimensional vector embeddings, we hypothesized that metrics for measuring similarity between text vector embeddings can be used to quantify consistency across outputs. This study quantifies similarity using scaled-dot product and cosine similarity.
 
@@ -77,7 +77,7 @@ Classifying outputs as correct if the scores are high and as incorrect if the sc
   <p>Figure 2: Pipeline of similarity computation</p>
 </div>
 
-## 3. Experiments
+## ✅ Experiments
 
 ### Dataset and Model 
 
@@ -91,7 +91,7 @@ Correctness metric is a metric that determines whether model's generation is cor
 
 I used perplexity, Length-Normalized Entropy, Lexical Similarity as baselines. 
 
-## 4. Result 
+## ✅ Result 
 
 ### Effectiveness of Attention Score and Cosine Score in Hallucination Detection
 
@@ -140,11 +140,11 @@ Although the hidden states-based metrics performed slightly worse than n-gram-ba
   <p>Table 2:〖AUC〗_r: AUROC when using the correctness metric with Rouge-L > 0.5. PCC: Pearson Correlation Coefficient between the correctness metric and the hallucination detection metric. ACC: Accuracy of the hallucination detection metric at the optimal threshold defined by G-Mean </p>
 </div>
 
-## Conclusion 
+## ✅ Conclusion 
 
 This study proposed two hallucination detection approaches utilizing the hidden states of LLMs: the Attention Score and the Cosine Score, and demonstrated their performance and utility. First, the Attention Score approach was introduced based on the fact that the scaled-dot product used in the transformer’s attention mechanism computes semantic associations between tokens in a sequence. Second, the Cosine Score was proposed by leveraging the simple fact that hidden states are text vector embeddings and calculating the similarity between text embeddings using cosine similarity. While the Attention Score showed variability depending on the model and dataset, it exhibited excellent hallucination detection performance. The Cosine Score consistently achieved the second-highest AUROC and PCC after the Eigenscore, regardless of the model or dataset. This study is significant in that it proposed uncertainty estimation approaches that are both interpretable in process and results, and practical in real-world applications by employing simple operations like the scaled-dot product and cosine similarity.
 
-## Reference 
+## ✅ Reference 
 
 Chen, C., Liu, K., Chen, Z., Gu, Y., Wu, Y., Tao, M., Fu, Z., & Ye, J. (2024). INSIDE: LLMs' Internal States Retain the Power of Hallucination Detection. ArXiv, abs/2402.03744.
 
